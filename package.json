@@ -1,0 +1,13 @@
+{
+  "name": "car-service-mechanic-hub",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Car Service & Mechanic Hub - Full Stack Application",
+  "scripts": {
+    "dev": "node dev.js",
+    "dev:backend": "npm run dev --prefix backend",
+    "dev:frontend": "npm run dev --prefix frontend",
+    "start": "node dev.js",
+    "build": "npm run build --prefix frontend"
+  }
+}

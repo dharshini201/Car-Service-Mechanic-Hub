@@ -1,0 +1,42 @@
+# Dependencies
+node_modules/
+backend/node_modules/
+frontend/node_modules/
+
+# Environment Variables & Sensitive Credentials (DO NOT UPLOAD)
+.env
+.env.*
+*.env
+backend/.env
+frontend/.env
+*.local
+!.env.example
+!backend/.env.example
+
+# Build outputs
+dist/
+build/
+frontend/dist/
+
+# Test reports, temporary logs & test suites
+playwright-report/
+test-results/
+frontend/playwright-report/
+frontend/test-results/
+backend/test_*.js
+frontend/tests/
+frontend/playwright.config.js
+logs/
+*.log
+
+# Scratch, agent artifacts & local tooling
+.agents/
+scratch/
+scratch
+.system_generated/
+
+# OS & IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
