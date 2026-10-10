@@ -55,7 +55,7 @@ function RequestDetails() {
               to="/mechanic/service-requests"
               className="text-decoration-none small text-secondary fw-semibold mb-2 d-inline-block"
             >
-              &larr; Back to Service Requests
+              <i className="bi bi-arrow-left me-1"></i> Back to Service Requests
             </Link>
             <div className="d-flex flex-wrap justify-content-between align-items-center gap-3">
               <div>

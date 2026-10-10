@@ -132,7 +132,7 @@ function EditProfile() {
               to="/customer/profile"
               className="text-decoration-none small text-secondary fw-semibold mb-2 d-inline-block"
             >
-              &larr; Back to Profile
+              <i className="bi bi-arrow-left me-1"></i> Back to Profile
             </Link>
             <h2 className="fw-bold mb-1 text-dark">Edit Profile</h2>
             <p className="text-secondary mb-0">

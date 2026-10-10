@@ -230,7 +230,7 @@ function CustomerDashboard() {
             <div className="d-flex justify-content-between align-items-center mb-3">
               <h4 className="fw-bold text-dark mb-0">Recent Service Bookings</h4>
               <Link to="/customer/bookings" className="text-decoration-none small fw-semibold text-primary">
-                View All Bookings ({totalBookings}) &rarr;
+                View All Bookings ({totalBookings}) <i className="bi bi-arrow-right ms-1"></i>
               </Link>
             </div>
 
@@ -272,7 +272,7 @@ function CustomerDashboard() {
             <div className="d-flex justify-content-between align-items-center mb-3">
               <h4 className="fw-bold text-dark mb-0">My Registered Vehicles</h4>
               <Link to="/customer/vehicles" className="text-decoration-none small fw-semibold text-primary">
-                Manage Vehicles ({vehicles.length}) &rarr;
+                Manage Vehicles ({vehicles.length}) <i className="bi bi-arrow-right ms-1"></i>
               </Link>
             </div>
 

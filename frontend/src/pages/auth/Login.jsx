@@ -136,7 +136,7 @@ function Login() {
                 {error.includes("Admin Login Portal") && (
                   <div className="mt-1">
                     <Link to="/admin/login" className="fw-bold text-danger">
-                      Go to Admin Login &rarr;
+                      Go to Admin Login <i className="bi bi-arrow-right ms-1"></i>
                     </Link>
                   </div>
                 )}

@@ -89,7 +89,7 @@ function BookingDetails() {
               to="/customer/bookings"
               className="text-decoration-none small text-secondary fw-semibold mb-2 d-inline-block"
             >
-              &larr; Back to My Bookings
+              <i className="bi bi-arrow-left me-1"></i> Back to My Bookings
             </Link>
             <div className="d-flex flex-wrap justify-content-between align-items-center gap-3">
               <div>

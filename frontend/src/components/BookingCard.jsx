@@ -121,7 +121,7 @@ function BookingCard({ booking, onView, onCancel }) {
                       }`}
                       style={{ width: "20px", height: "20px", fontSize: "10px" }}
                     >
-                      {isPassed ? "✓" : idx + 1}
+                      {isPassed ? <i className="bi bi-check-lg"></i> : idx + 1}
                     </div>
                     <span
                       className={`d-block text-truncate px-1 ${

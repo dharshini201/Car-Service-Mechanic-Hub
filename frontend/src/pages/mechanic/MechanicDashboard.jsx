@@ -437,7 +437,7 @@ function MechanicDashboard() {
                         {stats.totalAssignedServices}
                       </h3>
                       <small className="text-primary fw-medium mt-1 d-inline-block">
-                        View queue &rarr;
+                        View queue <i className="bi bi-arrow-right ms-1"></i>
                       </small>
                     </div>
                     <div
@@ -467,7 +467,7 @@ function MechanicDashboard() {
                         {stats.pendingServices}
                       </h3>
                       <small className="text-warning fw-medium mt-1 d-inline-block">
-                        Review requests &rarr;
+                        Review requests <i className="bi bi-arrow-right ms-1"></i>
                       </small>
                     </div>
                     <div
@@ -497,7 +497,7 @@ function MechanicDashboard() {
                         {stats.inServiceServices}
                       </h3>
                       <small className="text-info fw-medium mt-1 d-inline-block">
-                        Active repairs &rarr;
+                        Active repairs <i className="bi bi-arrow-right ms-1"></i>
                       </small>
                     </div>
                     <div
@@ -527,7 +527,7 @@ function MechanicDashboard() {
                         {stats.completedServices}
                       </h3>
                       <small className="text-success fw-medium mt-1 d-inline-block">
-                        View history &rarr;
+                        View history <i className="bi bi-arrow-right ms-1"></i>
                       </small>
                     </div>
                     <div

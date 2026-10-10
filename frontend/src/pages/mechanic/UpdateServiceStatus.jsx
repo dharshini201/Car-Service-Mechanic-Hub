@@ -97,11 +97,11 @@ function UpdateServiceStatus() {
               to="/mechanic/dashboard"
               className="text-decoration-none small text-secondary fw-semibold mb-2 d-inline-block"
             >
-              &larr; Back to Mechanic Dashboard
+              <i className="bi bi-arrow-left me-1"></i> Back to Mechanic Dashboard
             </Link>
             <h2 className="fw-bold mb-1 text-dark">Update Service Status</h2>
             <p className="text-secondary mb-0">
-              Advance service milestones: Pending &rarr; Confirmed &rarr; In Service &rarr; Completed &rarr; Ready for Pickup.
+              Advance service milestones: Pending <i className="bi bi-arrow-right mx-1"></i> Confirmed <i className="bi bi-arrow-right mx-1"></i> In Service <i className="bi bi-arrow-right mx-1"></i> Completed <i className="bi bi-arrow-right mx-1"></i> Ready for Pickup.
             </p>
           </div>
 
@@ -250,7 +250,7 @@ function UpdateServiceStatus() {
                         <option value="Ready for Pickup">Ready for Pickup</option>
                       </select>
                       <small className="text-muted mt-1 d-block">
-                        Normal Mechanic Workflow: Pending &rarr; In Progress &rarr; Completed
+                        Normal Mechanic Workflow: Pending <i className="bi bi-arrow-right mx-1"></i> In Progress <i className="bi bi-arrow-right mx-1"></i> Completed
                       </small>
                     </div>
 

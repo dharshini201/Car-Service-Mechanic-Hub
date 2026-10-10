@@ -111,7 +111,7 @@ function EditVehicle() {
               to="/customer/vehicles"
               className="text-decoration-none small text-secondary fw-semibold mb-2 d-inline-block"
             >
-              &larr; Back to My Vehicles
+              <i className="bi bi-arrow-left me-1"></i> Back to My Vehicles
             </Link>
             <h2 className="fw-bold mb-1 text-dark">Edit Vehicle</h2>
             <p className="text-secondary mb-0">

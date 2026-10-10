@@ -135,7 +135,7 @@ function AdminDashboard() {
                       <span className="text-secondary small fw-medium">Total Mechanics</span>
                       <h3 className="fw-bold text-dark mb-0">{stats.totalMechanics}</h3>
                       <Link to="/admin/mechanics" className="text-decoration-none small text-primary fw-semibold" style={{ fontSize: "11px" }}>
-                        Manage Team &rarr;
+                        Manage Team <i className="bi bi-arrow-right ms-1"></i>
                       </Link>
                     </div>
                   </div>
@@ -237,7 +237,7 @@ function AdminDashboard() {
             <div className="d-flex justify-content-between align-items-center mb-3">
               <h5 className="fw-bold text-dark mb-0">Recent Maintenance Requests</h5>
               <Link to="/admin/bookings" className="text-decoration-none text-primary small fw-semibold">
-                View All Bookings &rarr;
+                View All Bookings <i className="bi bi-arrow-right ms-1"></i>
               </Link>
             </div>
 
