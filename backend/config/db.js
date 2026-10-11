@@ -10,8 +10,17 @@ try {
 
 const connectDB = async (retryCount = 0) => {
   const maxRetries = 5;
+  const mongoUri = process.env.MONGODB_URI || process.env.MONGO_URI;
+
+  if (!mongoUri) {
+    console.error(
+      "MongoDB Error: Neither MONGODB_URI nor MONGO_URI environment variable is defined. Please configure this in your environment."
+    );
+    return;
+  }
+
   try {
-    const conn = await mongoose.connect(process.env.MONGO_URI, {
+    const conn = await mongoose.connect(mongoUri, {
       serverSelectionTimeoutMS: 8000,
     });
 

@@ -12,6 +12,7 @@ frontend/.env
 *.local
 !.env.example
 !backend/.env.example
+!frontend/.env.example
 
 # Build outputs
 dist/

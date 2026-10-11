@@ -8,8 +8,10 @@ const notFound = (req, res, next) => {
 };
 
 const errorHandler = (err, req, res, next) => {
-  const statusCode =
-    res.statusCode === 200 ? 500 : res.statusCode;
+  let statusCode = res.statusCode === 200 ? 500 : res.statusCode;
+  if (err.message && err.message.startsWith("CORS blocked")) {
+    statusCode = 403;
+  }
 
   res.status(statusCode).json({
     success: false,

@@ -1,7 +1,19 @@
 // ================= API CONFIGURATION =================
 
-export const API_BASE_URL =
-  import.meta.env.VITE_API_URL || "http://localhost:5001/api";
+const resolveApiBaseUrl = () => {
+  const envUrl = import.meta.env.VITE_API_URL;
+  if (!envUrl || !envUrl.trim()) {
+    return "http://localhost:5001/api";
+  }
+
+  let cleanUrl = envUrl.trim().replace(/\/+$/, "");
+  if (!cleanUrl.endsWith("/api")) {
+    cleanUrl = `${cleanUrl}/api`;
+  }
+  return cleanUrl;
+};
+
+export const API_BASE_URL = resolveApiBaseUrl();
 
 // ================= USER ROLES =================
 

@@ -1,7 +1,25 @@
 import axios from "axios";
 
+/**
+ * Normalizes and validates the API base URL.
+ * Handles both root URLs (e.g., https://app.onrender.com) and pre-appended URLs (e.g., https://app.onrender.com/api)
+ * ensuring requests never fail due to missing or duplicate '/api' path segments.
+ */
+export const getApiBaseUrl = () => {
+  const envUrl = import.meta.env.VITE_API_URL;
+  if (!envUrl || !envUrl.trim()) {
+    return "http://localhost:5001/api";
+  }
+
+  let cleanUrl = envUrl.trim().replace(/\/+$/, "");
+  if (!cleanUrl.endsWith("/api")) {
+    cleanUrl = `${cleanUrl}/api`;
+  }
+  return cleanUrl;
+};
+
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || "http://localhost:5001/api",
+  baseURL: getApiBaseUrl(),
   headers: {
     "Content-Type": "application/json",
   },

@@ -20,7 +20,7 @@ const Notification = require("../models/Notification");
 
 const seedData = async () => {
   try {
-    await mongoose.connect(process.env.MONGO_URI);
+    await mongoose.connect(process.env.MONGODB_URI || process.env.MONGO_URI);
     console.log("Connected to MongoDB Atlas for seeding...");
 
     // ================= 1. SEED ADMIN =================
