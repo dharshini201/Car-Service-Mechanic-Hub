@@ -115,6 +115,43 @@ The dispatch service (`assignmentService.js`) implements an equitable, workload-
 
 ---
 
+## 🌐 Production Deployment Guide
+
+### 1. Backend Deployment (Render)
+
+1. Sign in to [Render](https://render.com) and click **New +** ➔ **Web Service**.
+2. Connect your GitHub repository (`Car-Service-Mechanic-Hub` or `car-service-mechanic-hub-backend`).
+3. Set the following build and runtime settings:
+   - **Environment**: `Node`
+   - **Root Directory**: `backend` (leave empty if deploying directly from the `backend` repository)
+   - **Build Command**: `npm install`
+   - **Start Command**: `npm start`
+   - **Health Check Path**: `/api/health`
+4. Add the required Environment Variables in Render:
+   - `NODE_ENV`: `production`
+   - `MONGO_URI`: `mongodb+srv://<user>:<password>@cluster0.xxx.mongodb.net/carservice?retryWrites=true&w=majority`
+   - `JWT_SECRET`: `your_secure_jwt_secret`
+   - `FRONTEND_URL`: `https://your-frontend-app.vercel.app`
+   - `CLIENT_URL`: `https://your-frontend-app.vercel.app`
+   - `ALLOWED_ORIGINS`: `https://your-frontend-app.vercel.app`
+5. Click **Deploy Web Service**. Once deployed, copy your Render service URL (e.g. `https://car-service-backend.onrender.com`).
+
+### 2. Frontend Deployment (Vercel)
+
+1. Sign in to [Vercel](https://vercel.com) and click **Add New...** ➔ **Project**.
+2. Import your GitHub repository (`Car-Service-Mechanic-Hub` or `car-service-mechanic-hub-frontend`).
+3. Configure the Project Settings:
+   - **Framework Preset**: `Vite`
+   - **Root Directory**: Click edit and select `frontend` (leave as root if importing `car-service-mechanic-hub-frontend`).
+   - **Build Command**: `npm run build`
+   - **Output Directory**: `dist`
+4. In **Environment Variables**, add:
+   - `VITE_API_URL`: `https://car-service-backend.onrender.com` (Your deployed Render backend URL)
+5. Click **Deploy**.
+6. When deployment finishes, copy your Vercel URL and paste it into the Render backend's `FRONTEND_URL` and `CLIENT_URL` environment variables so CORS is matched.
+
+---
+
 ## 📁 Repository Structure
 
 ```

@@ -1,19 +1,8 @@
 // ================= API CONFIGURATION =================
 
-const resolveApiBaseUrl = () => {
-  const envUrl = import.meta.env.VITE_API_URL;
-  if (!envUrl || !envUrl.trim()) {
-    return "http://localhost:5001/api";
-  }
+import { getApiBaseUrl } from "../services/api";
 
-  let cleanUrl = envUrl.trim().replace(/\/+$/, "");
-  if (!cleanUrl.endsWith("/api")) {
-    cleanUrl = `${cleanUrl}/api`;
-  }
-  return cleanUrl;
-};
-
-export const API_BASE_URL = resolveApiBaseUrl();
+export const API_BASE_URL = getApiBaseUrl();
 
 // ================= USER ROLES =================
 
