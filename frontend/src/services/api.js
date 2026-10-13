@@ -9,9 +9,7 @@ export const getApiBaseUrl = () => {
   const envUrl = import.meta.env.VITE_API_URL;
   if (!envUrl || !envUrl.trim()) {
     if (import.meta.env.PROD) {
-      console.warn(
-        "[MRT Car Service] VITE_API_URL environment variable is not defined in production. Falling back to http://localhost:5001/api. Please configure VITE_API_URL in your Vercel Project Settings."
-      );
+      return "https://car-service-mechanic-hub-backend.onrender.com/api";
     }
     return "http://localhost:5001/api";
   }
