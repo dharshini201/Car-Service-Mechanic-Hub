@@ -58,9 +58,11 @@ const corsOptions = {
       return callback(null, true);
     }
 
-    // Check exact match, any Vercel deployment (*.vercel.app), or Render deployment
+    // Check exact match, any Netlify deployment (*.netlify.app), Vercel (*.vercel.app), or Render
     const isAllowed =
       allowedOrigins.includes(normalizedOrigin) ||
+      normalizedOrigin.endsWith(".netlify.app") ||
+      /^https:\/\/[a-z0-9-]+(\.[a-z0-9-]+)*\.netlify\.app$/i.test(normalizedOrigin) ||
       normalizedOrigin.endsWith(".vercel.app") ||
       /^https:\/\/[a-z0-9-]+(\.[a-z0-9-]+)*\.vercel\.app$/i.test(normalizedOrigin) ||
       normalizedOrigin.endsWith(".onrender.com");
@@ -85,7 +87,6 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
-app.options("*", cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
